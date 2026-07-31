@@ -5,6 +5,7 @@ int main(int ac, char **av)
     (void)ac;
     (void)av;
 
+    printf("cub3d execution started . . .\n");
     // PSEUDO
     //  PARSING(ac, av)
     //      return(error)
@@ -13,8 +14,7 @@ int main(int ac, char **av)
     //      return(error)
     //  RENDER_LOOP(STRUCT)
     //      infinite -> calls clear funciton inside render loop-setup
-    
-    printf("THIS IS THE PROGRAM\n");
+    //  FREE-FUNCTIONS
 
     return (0);
 }

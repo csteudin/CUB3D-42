@@ -14,7 +14,6 @@
 
 # define TILE_SIZE 16;
 
-
 //_STRUCTURES_
 typedef struct s_vec2
 {
@@ -43,6 +42,9 @@ typedef struct s_map
     char *texpath_S;
     char *texpath_W;
 
+    t_clr floor_clr;
+    t_clr ceiling_clr;
+
     char **raw_map;
     int     max_length;
     int     max_height;
@@ -51,7 +53,20 @@ typedef struct s_map
     char    start_view;
 }   t_map;
 
+typedef struct s_data //WIP
+{
+    t_map map;
+
+}   t_data;
+
 //_FUNCTIONS_
+//-MAIN
+
+//-PARSING
+
+//-RENDER
+
+//-UTILS
 
 
 #endif
