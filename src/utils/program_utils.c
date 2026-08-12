@@ -8,12 +8,12 @@ void error_exit(char *msg)
         write(2, msg, ft_strlen(msg));
         write(2, "\n", 1);
     }
-    free_map();
-    exit(EXIT_FAILURE);
+    free_data();
+    exit(EXIT_FAILURE);  
 }
 
-t_map *getmap(void)
+t_data *getdata(void)
 {
-    static t_map    map;
-    return (&map);
+    static t_data    data;
+    return (&data);
 }

@@ -3,6 +3,7 @@
 
 //_INCLUDES_
 #include "../libs/MLX42/include/MLX42/MLX42.h"
+#include "../libs/libft/libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -61,12 +62,27 @@ typedef struct s_data //WIP
 
 //_FUNCTIONS_
 //-MAIN
+//-main.c
+
 
 //-PARSING
+//-parse_file
 
 //-RENDER
 
+
 //-UTILS
+//-free_utils
+void    free_map(t_data *data);
+void    free_data(void);
+
+//-init_utils
+void    init_map(t_data *data);
+void    init_data(void);
+
+//-program_utils
+void    error_exit(char *msg);
+t_data  *getdata(void);
 
 
 #endif
