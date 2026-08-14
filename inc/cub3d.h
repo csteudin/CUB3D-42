@@ -46,7 +46,8 @@ typedef struct s_map
     t_clr floor_clr;
     t_clr ceiling_clr;
 
-    char **raw_map;
+    char    **raw_lines;
+    char    **raw_map;
     int     max_length;
     int     max_height;
 
@@ -67,6 +68,15 @@ typedef struct s_data //WIP
 
 //-PARSING
 //-parse_file
+int     parse_file(int ac, char **av);
+
+//-parse_lines
+int     parse_lines();
+
+//-read_file
+void    get_lines(char **av, t_map *map);
+void    read_lines(char **av, t_map *map);
+void    read_file(char **av);
 
 //-RENDER
 

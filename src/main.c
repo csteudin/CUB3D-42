@@ -6,9 +6,8 @@ int main(int ac, char **av)
     (void)av;
 
     printf("cub3d execution started . . .\n");
+    parse_file(ac, av);
     // PSEUDO
-    //  PARSING(ac, av)
-    //      return(error)
     //  INIT(ac, av)
     // - creates STRUCT
     //      return(error)
