@@ -1,7 +1,7 @@
 #ifndef CUB3D_H
 #define CUB3D_H
 
-//_INCLUDES_
+//-__INCLUDES__-
 #include "../libs/MLX42/include/MLX42/MLX42.h"
 #include "../libs/libft/libft.h"
 #include <stdlib.h>
@@ -9,13 +9,13 @@
 #include <unistd.h>
 #include <stdint.h>
 
-//_DEFINES_
+//-__DEFINES__-
 # define WIDTH 1920
 # define HEIGHT 1080
 
 # define TILE_SIZE 16;
 
-//_STRUCTURES_
+//-__STRUCTURES__-
 typedef struct s_vec2
 {
     int x;
@@ -59,16 +59,19 @@ typedef struct s_data //WIP
 {
     t_map map;
 
+    // t_mlx *mlx_image
+    // other mlx stuff . . .
+    // other game stuff . . .
 }   t_data;
 
-//_FUNCTIONS_
-//-MAIN
-//-main.c
+//-___FUNCTIONS___-
 
+//_--MAIN--_------>
+int main(int ac, char **av);
 
-//-PARSING
+//_--PARSING--_--->
 //-parse_file
-int     parse_file(int ac, char **av);
+int     parse_file(char **av);
 
 //-parse_lines
 int     parse_lines();
@@ -78,10 +81,10 @@ void    get_lines(char **av, t_map *map);
 void    read_lines(char **av, t_map *map);
 void    read_file(char **av);
 
-//-RENDER
+//_--RENDER--_---->
 
 
-//-UTILS
+//_--UTILS--_----->
 //-free_utils
 void    free_map(t_data *data);
 void    free_data(void);

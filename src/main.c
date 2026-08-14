@@ -2,15 +2,13 @@
 
 int main(int ac, char **av)
 {
-    (void)ac;
-    (void)av;
+    if (ac != 2)
+        error_exit("Wrong number of arguments");
 
-    printf("cub3d execution started . . .\n");
-    parse_file(ac, av);
+    init_data();
+    parse_file(av);
     // PSEUDO
-    //  INIT(ac, av)
-    // - creates STRUCT
-    //      return(error)
+    //  INIT_MLX -> onto data struct
     //  RENDER_LOOP(STRUCT)
     //      infinite -> calls clear funciton inside render loop-setup
     //  FREE-FUNCTIONS
