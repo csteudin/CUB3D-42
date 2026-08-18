@@ -11,7 +11,8 @@ void	init_map(t_data *data)
 	map->texpath_SO = NULL;
 	map->texpath_EA = NULL;
 	map->texpath_WE = NULL;
-	map->raw_map = NULL;
+	map->raw_lines = NULL;
+    map->raw_map = NULL;
     map->map_start_idx = -1;
 	map->max_length = 0;
 	map->max_height = 0;

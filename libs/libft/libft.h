@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csteudin <csteudin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nakama <nakama@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 10:51:38 by csteudin          #+#    #+#             */
-/*   Updated: 2024/03/27 17:01:52 by csteudin         ###   ########.fr       */
+/*   Updated: 2026/08/18 12:07:58 by nakama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,6 @@ int			get_new_line(int fd, char **line, char *buffer);
 char		*get_new_buffer(char *line, char **buffer);
 int			clean_up(char **line, char *buffer);
 int			redo_line(char **dst, char *src);
+//CUSTOM
+void        ft_free_2d(char **arr);
 #endif

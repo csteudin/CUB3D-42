@@ -10,7 +10,7 @@ void check_flags(t_map *map)
         error_exit("No map found in file");
 }
 
-void increment_flag(t_map *map, t_line_type type)
+void increment_flag(t_map *map, t_line type)
 {
     if (type == LINE_NO)
         map->lines.count_NO++;
@@ -26,7 +26,7 @@ void increment_flag(t_map *map, t_line_type type)
         map->lines.count_C++;
 }
 
-void update_flags(t_map *map, t_line_type type, int idx)
+void update_flags(t_map *map, t_line type, int idx)
 {
     if (type == LINE_INVALID)
         error_exit("Invalid line in file");
@@ -58,6 +58,7 @@ int parse_lines()
     }
     check_flags(map);
     extract_map(map);
+    pad_map(map);
     //validate values
     
     return (0);

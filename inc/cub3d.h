@@ -48,12 +48,12 @@ typedef enum e_line_type
     
 	LINE_EMPTY,
 	LINE_INVALID
-}	t_line_type;
+}	t_line;
 
 typedef struct s_identifier
 {
     char *key;
-    t_line_type type;
+    t_line type;
 }   t_identifier;
 
 typedef struct s_lines
@@ -104,18 +104,21 @@ typedef struct s_data //WIP
 int main(int ac, char **av);
 
 //_--PARSING--_--->
-//-extract_map
-
-void extract_map(t_map *map);
+//-handle_map
+int     count_map_lines(t_map *map);
+void    extract_map(t_map *map);
+void    find_max_length(t_map *map);
+char    *build_new_line(char *line, int len);
+void    pad_map(t_map *map);
 
 //-get_line_type
 int     starts_with(char *line, char *key);
 int     is_map_line(char *line);
-t_line_type get_line_type(char *line);
+t_line  get_line_type(char *line);
 
 //-parse_file
-void    increment_flag(t_map *map, t_line_type type);
-void    update_flags(t_map *map, t_line_type type, int idx);
+void    increment_flag(t_map *map, t_line type);
+void    update_flags(t_map *map, t_line type, int idx);
 void    check_flags(t_map *map);
 int     parse_file(char **av);
 

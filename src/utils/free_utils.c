@@ -4,9 +4,7 @@
 void free_map(t_data *data)
 {
 	t_map	*map;
-	int 	i;
 
-	i = 0;
 	map = &data->map;
 	if (map->file_path)
 		free(map->file_path);
@@ -18,26 +16,10 @@ void free_map(t_data *data)
 		free(map->texpath_EA);
 	if (map->texpath_WE)
 		free(map->texpath_WE);
-	if (map->raw_lines)
-	{
-		i = 0;
-		while (map->raw_lines[i])
-		{
-			free(map->raw_lines[i]);
-			i++;
-		}
-		free(map->raw_lines);
-	}
+    ft_free_2d(map->raw_lines);
+    //ft_free_2d(map->raw_map);
     if (map->raw_map)
-	{
-		i = 0;
-		while (map->raw_map[i])
-		{
-			free(map->raw_map[i]);
-			i++;
-		}
-		free(map->raw_map);
-	}
+        free(map->raw_map);
 }
 
 // FREE_DATA

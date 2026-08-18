@@ -28,7 +28,7 @@ int is_map_line(char *line)
     return (i);
 }
 
-t_line_type get_line_type(char *line)
+t_line get_line_type(char *line)
 {
     t_identifier    idents[6];
     int i;
