@@ -104,17 +104,22 @@ typedef struct s_data //WIP
 int main(int ac, char **av);
 
 //_--PARSING--_--->
+//-find_player
+int     is_pos(char c);
+void    scan_pos(t_map *map, int y, int *count);
+void    find_player(t_map *map);
+
+//-get_line_type
+int     starts_with(char *line, char *key);
+int     is_map_line(char *line);
+t_line  get_line_type(char *line);
+
 //-handle_map
 int     count_map_lines(t_map *map);
 void    extract_map(t_map *map);
 void    find_max_length(t_map *map);
 char    *build_new_line(char *line, int len);
 void    pad_map(t_map *map);
-
-//-get_line_type
-int     starts_with(char *line, char *key);
-int     is_map_line(char *line);
-t_line  get_line_type(char *line);
 
 //-parse_file
 void    increment_flag(t_map *map, t_line type);
@@ -129,6 +134,12 @@ int     parse_lines();
 void    get_lines(char **av, t_map *map);
 void    read_lines(char **av, t_map *map);
 void    read_file(char **av);
+
+//validate_map
+int     **init_vision(t_map *map);
+void    free_vision(t_map *map, int **vision);
+void    flood_fill(t_map *map, int **vision, int y, int x);
+void    validate_map(t_map *map);
 
 //_--RENDER--_---->
 

@@ -57,9 +57,5 @@ int parse_lines()
         i++;
     }
     check_flags(map);
-    extract_map(map);
-    pad_map(map);
-    //validate values
-    
     return (0);
 }
