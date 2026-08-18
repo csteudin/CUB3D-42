@@ -10,15 +10,25 @@ void free_map(t_data *data)
 	map = &data->map;
 	if (map->file_path)
 		free(map->file_path);
-	if (map->texpath_N)
-		free(map->texpath_N);
-	if (map->texpath_S)
-		free(map->texpath_S);
-	if (map->texpath_E)
-		free(map->texpath_E);
-	if (map->texpath_W)
-		free(map->texpath_W);
-	if (map->raw_map)
+	if (map->texpath_NO)
+		free(map->texpath_NO);
+	if (map->texpath_SO)
+		free(map->texpath_SO);
+	if (map->texpath_EA)
+		free(map->texpath_EA);
+	if (map->texpath_WE)
+		free(map->texpath_WE);
+	if (map->raw_lines)
+	{
+		i = 0;
+		while (map->raw_lines[i])
+		{
+			free(map->raw_lines[i]);
+			i++;
+		}
+		free(map->raw_lines);
+	}
+    if (map->raw_map)
 	{
 		i = 0;
 		while (map->raw_map[i])
@@ -29,6 +39,7 @@ void free_map(t_data *data)
 		free(map->raw_map);
 	}
 }
+
 // FREE_DATA
 // Calls free_map
 // deletes MLX and own DATA

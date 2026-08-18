@@ -35,19 +35,53 @@ typedef union u_clr
     }   channel;
 }   t_clr;
 
+
+typedef enum e_line_type
+{
+	LINE_NO,
+	LINE_EA,
+	LINE_SO,
+	LINE_WE,
+	LINE_F,
+	LINE_C,
+	LINE_MAP,
+    
+	LINE_EMPTY,
+	LINE_INVALID
+}	t_line_type;
+
+typedef struct s_identifier
+{
+    char *key;
+    t_line_type type;
+}   t_identifier;
+
+typedef struct s_lines
+{
+    int count_NO;
+    int count_EA;
+    int count_SO;
+    int count_WE;
+    int count_F;
+    int count_C;
+}   t_lines;
+
 typedef struct s_map
 {
     char *file_path;
-    char *texpath_N;
-    char *texpath_E;
-    char *texpath_S;
-    char *texpath_W;
+    char *texpath_NO;
+    char *texpath_EA;
+    char *texpath_SO;
+    char *texpath_WE;
 
     t_clr floor_clr;
     t_clr ceiling_clr;
 
+    t_lines lines;
+
     char    **raw_lines;
     char    **raw_map;
+    int     map_start_idx;
     int     max_length;
     int     max_height;
 
@@ -70,7 +104,19 @@ typedef struct s_data //WIP
 int main(int ac, char **av);
 
 //_--PARSING--_--->
+//-extract_map
+
+void extract_map(t_map *map);
+
+//-get_line_type
+int     starts_with(char *line, char *key);
+int     is_map_line(char *line);
+t_line_type get_line_type(char *line);
+
 //-parse_file
+void    increment_flag(t_map *map, t_line_type type);
+void    update_flags(t_map *map, t_line_type type, int idx);
+void    check_flags(t_map *map);
 int     parse_file(char **av);
 
 //-parse_lines

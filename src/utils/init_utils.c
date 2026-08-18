@@ -7,11 +7,12 @@ void	init_map(t_data *data)
 
 	map = &data->map;
 	map->file_path = NULL;
-	map->texpath_N = NULL;
-	map->texpath_S = NULL;
-	map->texpath_E = NULL;
-	map->texpath_W = NULL;
+	map->texpath_NO = NULL;
+	map->texpath_SO = NULL;
+	map->texpath_EA = NULL;
+	map->texpath_WE = NULL;
 	map->raw_map = NULL;
+    map->map_start_idx = -1;
 	map->max_length = 0;
 	map->max_height = 0;
 	map->start_pos.x = -1;

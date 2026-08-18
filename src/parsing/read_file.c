@@ -41,7 +41,7 @@ void read_lines(char **av, t_map *map)
    
     map->raw_lines = malloc(sizeof(char *) * (count + 1));
     if (map->raw_lines == NULL)
-    error_exit("Could not allocate raw_lines");
+        error_exit("Could not allocate raw_lines");
     close(fd);
 }
 
