@@ -68,7 +68,6 @@ typedef struct s_lines
 
 typedef struct s_map
 {
-    char *file_path;
     char *texpath_NO;
     char *texpath_EA;
     char *texpath_SO;
@@ -121,14 +120,27 @@ void    find_max_length(t_map *map);
 char    *build_new_line(char *line, int len);
 void    pad_map(t_map *map);
 
+//-parse_colors
+int is_number(char *str);
+int parse_rgb(char *str);
+void get_color(char *line, t_line type);
+
+
 //-parse_file
-void    increment_flag(t_map *map, t_line type);
-void    update_flags(t_map *map, t_line type, int idx);
-void    check_flags(t_map *map);
 int     parse_file(char **av);
 
 //-parse_lines
-int     parse_lines();
+void    check_flags(t_map *map);
+void    increment_flag(t_map *map, t_line type);
+void    update_flags(t_map *map, t_line type, int idx);
+int     parse_lines(t_map *map);
+
+//-parse_values
+int trimmed_len(char *str);
+char *cut_value(char *line, t_line type);
+void get_path(char *line, t_line type);
+void parse_values(t_map *map);
+
 
 //-read_file
 void    get_lines(char **av, t_map *map);

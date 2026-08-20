@@ -6,8 +6,6 @@ void free_map(t_data *data)
 	t_map	*map;
 
 	map = &data->map;
-	if (map->file_path)
-		free(map->file_path);
 	if (map->texpath_NO)
 		free(map->texpath_NO);
 	if (map->texpath_SO)
@@ -17,9 +15,7 @@ void free_map(t_data *data)
 	if (map->texpath_WE)
 		free(map->texpath_WE);
     ft_free_2d(map->raw_lines);
-    //ft_free_2d(map->raw_map);
-    if (map->raw_map)
-        free(map->raw_map);
+    ft_free_2d(map->raw_map);
 }
 
 // FREE_DATA

@@ -43,14 +43,11 @@ void update_flags(t_map *map, t_line type, int idx)
     increment_flag(map, type);
 }
 
-int parse_lines()
+int parse_lines(t_map *map)
 {
-    t_map *map;
     int i;
 
-    map = &getdata()->map;
     i = 0;
-
     while(map->raw_lines[i])
     {
         update_flags(map, get_line_type(map->raw_lines[i]), i);

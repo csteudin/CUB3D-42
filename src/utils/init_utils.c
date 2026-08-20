@@ -6,7 +6,6 @@ void	init_map(t_data *data)
 	t_map	*map;
 
 	map = &data->map;
-	map->file_path = NULL;
 	map->texpath_NO = NULL;
 	map->texpath_SO = NULL;
 	map->texpath_EA = NULL;
