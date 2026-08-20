@@ -7,11 +7,22 @@ int main(int ac, char **av)
 
     init_data();
     parse_file(av);
+    
+    
+    //TESTING - - - - - - - - - -
+    init_render();
+    rendering();
+
+    // - - - - - - - - - - - - -
+
+
     // PSEUDO
+    //init signals
     //  INIT_MLX -> onto data struct
     //  RENDER_LOOP(STRUCT)
     //      infinite -> calls clear funciton inside render loop-setup
-    //  FREE-FUNCTIONS
+
+    free_data();
 
     return (0);
 }

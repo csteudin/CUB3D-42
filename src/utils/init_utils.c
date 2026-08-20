@@ -21,6 +21,22 @@ void	init_map(t_data *data)
 	map->floor_clr.rgba = 0;
 	map->ceiling_clr.rgba = 0;
 }
+//SEPERAT AUFRUFEN
+void	init_render()
+{
+    t_render *render;
+	
+    render = &getdata()->render;
+    render->mlx = mlx_init(WIDTH, HEIGHT, "_-cub3D-_", true);
+	if (!render->mlx)
+		error_exit("Could not initialize MLX42");
+	render->img = mlx_new_image(render->mlx, WIDTH, HEIGHT);
+	if (!render->img)
+		error_exit("Could not create MLX42 image");
+	if (mlx_image_to_window(render->mlx, render->img, 0, 0) < 0)
+		error_exit("Could not attach image to window");
+    render->tile_size = calc_tile_size(&getdata()->map);
+}
 
 void init_data(void)
 {
@@ -28,5 +44,4 @@ void init_data(void)
 
 	data = getdata();
 	init_map(data);
-	
 }

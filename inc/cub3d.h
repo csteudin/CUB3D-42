@@ -13,8 +13,6 @@
 # define WIDTH 1920
 # define HEIGHT 1080
 
-# define TILE_SIZE 16;
-
 //-__STRUCTURES__-
 typedef struct s_vec2
 {
@@ -88,12 +86,18 @@ typedef struct s_map
     char    start_view;
 }   t_map;
 
+typedef struct s_render
+{
+    mlx_t       *mlx;
+    mlx_image_t *img;
+    int tile_size;
+}   t_render;
+
 typedef struct s_data //WIP
 {
-    t_map map;
+    t_map   map;
+    t_render render;
 
-    // t_mlx *mlx_image
-    // other mlx stuff . . .
     // other game stuff . . .
 }   t_data;
 
@@ -154,6 +158,10 @@ void    flood_fill(t_map *map, int **vision, int y, int x);
 void    validate_map(t_map *map);
 
 //_--RENDER--_---->
+//-rendering
+int	calc_tile_size(t_map *map);
+void put_tile(int x_pos, int y_pos, t_render rnd, t_clr clr);
+int rendering();
 
 
 //_--UTILS--_----->
@@ -163,6 +171,7 @@ void    free_data(void);
 
 //-init_utils
 void    init_map(t_data *data);
+void	init_render();
 void    init_data(void);
 
 //-program_utils

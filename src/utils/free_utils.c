@@ -18,6 +18,8 @@ void free_map(t_data *data)
     ft_free_2d(map->raw_map);
 }
 
+//free_render()
+
 // FREE_DATA
 // Calls free_map
 // deletes MLX and own DATA
@@ -27,5 +29,6 @@ void free_data(void)
 
 	data = getdata();
 	free_map(data);
-
+    //free_render();
+        // check if already started !!!
 }
